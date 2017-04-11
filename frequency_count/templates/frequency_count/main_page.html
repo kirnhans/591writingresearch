@@ -1,0 +1,38 @@
+{% extends "frequency_count/base.html" %}
+{% block title %} Post {% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% include 'grumblr/navbar.html' %}
+
+<script src="/static/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/static/js/feeds.js"></script>
+
+<div class = "post-feed">
+	<div class = "write-post">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title"> {{user}}</h3>
+			</div>
+			<div class="panel-body">
+				<form action="add-post" method="post">
+					<input class = "post-input" type="text" name="text"><br>
+					<input class = "post-submit" type="submit" value="Post">
+					{% csrf_token %}
+					{% for error in form.text.errors %}
+					<p style="color:red; text-align:center">{{error}}</p>
+					{% endfor %}
+					{% for error in form.non_field_errors %}
+					<p style="color:red; text-align:center">{{error}}</p>
+					{% endfor %}
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="posts">
+		
+	</div>
+</div>
+
+{% endblock %}

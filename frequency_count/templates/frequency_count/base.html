@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>{% block title %}Grumblr{% endblock %}</title>
+	
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'grumblr.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body class="background">
+
+	{% block content %}
+
+	{% endblock %}
+
+</body>
+</html>

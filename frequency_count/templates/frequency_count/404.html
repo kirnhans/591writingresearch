@@ -1,0 +1,26 @@
+{% extends "grumblr/base.html" %}
+{% block title %}404: Page Not Found{% endblock %}
+	
+	{% block content %}
+	{% load staticfiles %}
+	
+	{% include 'grumblr/navbar.html' %}
+	
+	<div class = "lost-feed">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">Whoops</h3>
+			</div>
+			<div class="panel-body">
+				<!-- image: http://cdn.attackofthecute.com/January-20-2014-20-46-56-k.jpg-->
+				<img class = "kitten-picture" src="https://s3-us-west-2.amazonaws.com/khans-grumblr/confused-kitten.jpg"></img><br><br>
+				<div class="lost-text">How'd I get here?</div>
+			</div>
+		</div>
+		<div class ="content lost">
+			Looks like you got lost. Let's go <a href="feeds.html">home</a>.
+		</div>
+	</div>
+
+
+{% endblock %}
